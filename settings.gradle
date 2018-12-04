@@ -1,2 +1,1 @@
 include ':app', ':openCVLibrary341'
-project(':openCVLibrary341').projectDir = new File('openCVLibrary341')
