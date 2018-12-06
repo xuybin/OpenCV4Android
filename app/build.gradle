@@ -1,21 +1,33 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
+
     defaultConfig {
         applicationId "com.jiangdg.opencv4android"
         minSdkVersion 18
-        targetSdkVersion 25
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
             cmake {
-                arguments "-DANDROID_ARM_NEON=TRUE", "-DANDROID_TOOLCHAIN=clang","-DCMAKE_BUILD_TYPE=Release"
+                arguments "-DANDROID_ARM_NEON=TRUE", "-DANDROID_TOOLCHAIN=clang"
                 //'-DANDROID_STL=gnustl_static'
+
+//               arguments "-DANDROID_CPP_FEATURES=rtti exceptions",
+//                        "-DANDROID_TOOLCHAIN=clang",
+//                        "-DCMAKE_BUILD_TYPE=Release",
+//                       "-DANDROID_PLATFORM=android-28",
+//                       "-DANDROID_ABI=armeabi-v7a",
+//                        "-DANDROID_STL=gnustl_static",
+//                        "-DANDROID_ARM_MODE=arm",
+//                        "-DANDROID_ARM_NEON=TRUE"
                 cppFlags "-std=c++11","-frtti", "-fexceptions"
             }
         }
+
         // 设置输出指定目标平台so
         ndk{
             abiFilters 'armeabi-v7a','arm64-v8a','armeabi'
@@ -36,7 +48,7 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:appcompat-v7:25.+'
+    implementation 'com.android.support:appcompat-v7:28.+'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'

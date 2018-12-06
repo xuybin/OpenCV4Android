@@ -275,8 +275,9 @@ jint blinkNumberRight = 0;
 jboolean leftEyeOpen = true;
 jboolean rightEyeOpen = true;
 
+
 JNIEXPORT void JNICALL Java_com_jiangdg_opencv4android_natives_DetectionBasedTracker_nativeDetectEyeBlink
-(JNIEnv *env, jclass jcls){
+(JNIEnv *env, jclass jcls,jlong faceImage){
 //    Mat matCapturedGrayImage;
 //    Rect face;
 //    Rect detectedFaceRegion;

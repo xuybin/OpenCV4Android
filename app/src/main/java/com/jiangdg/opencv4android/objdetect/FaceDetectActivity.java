@@ -119,10 +119,10 @@ public class FaceDetectActivity extends AppCompatActivity implements CameraBridg
         super.onResume();
         // 静态初始化OpenCV
         if (!OpenCVLoader.initDebug()) {
-            Log.d(TAG, "无法加载OpenCV本地库，将使用OpenCV Manager初始化");
-            OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_3_3_0, this, mLoaderCallback);
+            Log.e(TAG, "无法加载OpenCV本地库，将使用OpenCV Manager初始化");
+           // OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_3_3_0, this, mLoaderCallback);
         } else {
-            Log.d(TAG, "成功加载OpenCV本地库");
+            Log.e(TAG, "成功加载OpenCV本地库");
             mLoaderCallback.onManagerConnected(LoaderCallbackInterface.SUCCESS);
         }
     }

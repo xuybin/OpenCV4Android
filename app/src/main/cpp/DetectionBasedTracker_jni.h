@@ -7,6 +7,7 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+
 /*
  * Class:     org_opencv_samples_fd_DetectionBasedTracker
  * Method:    nativeCreateObject
@@ -56,7 +57,7 @@ JNIEXPORT void JNICALL Java_com_jiangdg_opencv4android_natives_DetectionBasedTra
   (JNIEnv *, jclass, jlong, jlong, jlong);
 
 JNIEXPORT void JNICALL Java_com_jiangdg_opencv4android_natives_DetectionBasedTracker_nativeDetectEyeBlink
-(JNIEnv *, jclass);
+(JNIEnv *, jclass,jlong);
 
 JNIEXPORT void JNICALL Java_com_jiangdg_opencv4android_natives_DetectionBasedTracker_nativeRgba
 (JNIEnv * , jclass ,jlong ,jint ,jint);
